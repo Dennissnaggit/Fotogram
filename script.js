@@ -43,13 +43,26 @@ function renderDialog(index) {
             />
           </section>
           <footer>
-            <button><img src="/img/buttonleft.png" alt="" /></button>
+            <button onclick=(previousPicture(${index}))><img src="/img/buttonleft.png" alt="" /></button>
             <p>1/12</p>
             <button onclick=(nextPicture(${index}))><img src="/img/buttonright.png" alt="" /></button>
           </footer>`;
 }
 function nextPicture(index) {
+  if (index >= (myImages.length -1)) {
+    dialogRef.replaceChildren();
+    dialogRef.showModal();
+    dialogRef.innerHTML += renderDialog(0);
+  } else {
+    dialogRef.replaceChildren();
+    dialogRef.showModal();
+    dialogRef.innerHTML += renderDialog(index +1);
+  }
+}
+function previousPicture(index) {
   dialogRef.replaceChildren();
   dialogRef.showModal();
-  dialogRef.innerHTML += renderDialog(index + 1);
+  dialogRef.innerHTML += renderDialog(index - 1);
+  console.log((myImages.length));
+  
 }
