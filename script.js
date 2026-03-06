@@ -64,7 +64,7 @@ function previousPicture(index) {
   if (index <= 0) {
     dialogRef.replaceChildren();
     dialogRef.showModal();
-    dialogRef.innerHTML += renderDialog(index);
+    dialogRef.innerHTML += renderDialog(7);
     
   } else{
   dialogRef.replaceChildren();
