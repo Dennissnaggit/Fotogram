@@ -19,17 +19,18 @@ function render() {
 
 function getImages(index) {
   return `
-        <img onclick=(openDialog()) class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder">
+        <img onclick=(openDialog(${index})) class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder">
         `;
 }
 
-function openDialog() {
+function openDialog(index) {
   dialogRef.replaceChildren();
   dialogRef.showModal();
-  dialogRef.innerHTML += renderDialog;
+  dialogRef.innerHTML += renderDialog(index);
 }
 
-function renderDialog() {
+function renderDialog(index) {
+  
   return ` 
           <header class="dialog-header">
             <h2>Image Name</h2>
@@ -38,7 +39,7 @@ function renderDialog() {
           <section class="dialog-image">
             <img
               class="dialog-main-image"
-              src="/img/pictures/All_1.png"
+              <img src="${myImages[index]}" alt="Weltraum Bilder">"
               alt=""
             />
           </section>
