@@ -8,15 +8,22 @@ let myImages = [
   "img/pictures/All_7.png",
   "img/pictures/All_8.png",
 ];
-let imagesRef = document.getElementById("main-images");
+const imagesRef = document.getElementById("main-images");
+const dialogRef = document.getElementById("imageDialog");
 
 function render() {
-    for (let index = 0; index < myImages.length; index++) {
-        imagesRef.innerHTML += getImages(index);   
-    }}
+  for (let index = 0; index < myImages.length; index++) {
+    imagesRef.innerHTML += getImages(index);
+  }
+}
 
 function getImages(index) {
-    return   `
-        <img class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder">
-        `
+  return `
+        <img onclick=("openDialog()") class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder">
+        `;
 }
+
+function openDialog() {
+    dialogRef.showModal();
+}
+openDialog();
