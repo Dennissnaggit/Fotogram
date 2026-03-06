@@ -8,8 +8,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-.menu-class{
-background-color: rgb(14, 32, 41);
+.menu-class {
+  background-color: rgb(14, 32, 41);
   max-height: 81px;
   flex: 1;
 }
@@ -45,7 +45,7 @@ h1 {
   font-weight: 800;
   margin-bottom: 80px;
 }
-footer {
+.footer-class {
   background-color: black;
   background-image: url("img/Subtract.png");
   object-fit: contain;
@@ -57,49 +57,59 @@ footer {
   align-items: center;
   flex-shrink: 0;
 }
-footer img {
+
+.footer-class img {
   height: 36px;
 }
-footer p {
+.footer-class p {
   padding-top: 20px;
   color: gray;
 }
 .main-images {
-    width: 150px;
-    height: 150px;
-    border: solid 1px grey;
-    border-radius: 20px;
-    object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border: solid 1px grey;
+  border-radius: 20px;
+  object-fit: cover;
 }
 .main-container-images {
-    display: flex;
-    gap: 16px;
-    height: auto;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 16px;
+  height: auto;
+  flex-wrap: wrap;
 }
 dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 30px;
+  border-radius: 30px;
+  background-color: rgb(14, 32, 41);
+}
+.dialog-header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: auto;
-    padding: 30px;
-    border-radius: 30px;
-    background-color: rgb(14, 32, 41);
+    justify-content: space-between;
+    width: 100%;
 }
 .images-Dialog {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dialog-main-image {
-   width: 560px;
+  width: 560px;
 }
 .images-Dialog header {
-    display: flex;
-    color: white;
-    justify-content: space-between;
+  display: flex;
+  color: white;
+  justify-content: space-between;
 }
 .images-Dialog footer {
-    display: flex;
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 50px;
 }
