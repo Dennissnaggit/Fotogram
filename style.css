@@ -79,7 +79,16 @@ h1 {
   flex-wrap: wrap;
 }
 dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+dialog[open] {
   display: flex;
+}
+
+.images-Dialog {
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -88,28 +97,33 @@ dialog {
   border-radius: 30px;
   background-color: rgb(14, 32, 41);
 }
+
 .dialog-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.images-Dialog {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+
 .dialog-main-image {
   width: 560px;
 }
+
 .images-Dialog header {
   display: flex;
   color: white;
   justify-content: space-between;
 }
+
 .images-Dialog footer {
   display: flex;
   color: white;
   align-items: center;
   gap: 50px;
+}
+
+.images-Dialog button {
+  all: unset;
+  cursor: pointer;
+  background-color: rgb(14, 32, 41);
 }
