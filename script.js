@@ -10,6 +10,7 @@ let myImages = [
 ];
 const imagesRef = document.getElementById("main-images");
 const dialogRef = document.getElementById("imageDialog");
+const valueRef = document.getElementById("indexNumber");
 
 function render() {
   for (let index = 0; index < myImages.length; index++) {
@@ -36,33 +37,38 @@ function renderDialog(index) {
             <a href="#close"><img src="/img/Close icon.svg" alt="schliessen button" /></a>
           </header>
           <section class="dialog-image">
-            <img
-              class="dialog-main-image"
-              <img src="${myImages[index]}" alt="Weltraum Bilder">"
-              alt=""
-            />
+        <img class="dialog-main-image" src="${myImages[index]}" alt="Weltraum Bilder" />
           </section>
           <footer>
-            <button onclick=(previousPicture(${index}))><img src="/img/buttonleft.png" alt="" /></button>
-            <p>1/12</p>
-            <button onclick=(nextPicture(${index}))><img src="/img/buttonright.png" alt="" /></button>
+            <button onclick="previousPicture(${index})">
+            <img src="/img/buttonleft.png" alt="" />
+            </button>
+            <div class="value-image" id="indexNumber"><p>${index + 1} / ${myImages.length}</p></div>
+            <button onclick="nextPicture(${index})"">
+            <img src="/img/buttonright.png" alt="" />
+            </button>
           </footer>`;
 }
 function nextPicture(index) {
-  if (index >= (myImages.length -1)) {
+  if (index >= myImages.length - 1) {
     dialogRef.replaceChildren();
     dialogRef.showModal();
     dialogRef.innerHTML += renderDialog(0);
   } else {
     dialogRef.replaceChildren();
     dialogRef.showModal();
-    dialogRef.innerHTML += renderDialog(index +1);
+    dialogRef.innerHTML += renderDialog(index + 1);
   }
 }
 function previousPicture(index) {
+  if (index <= 0) {
+    dialogRef.replaceChildren();
+    dialogRef.showModal();
+    dialogRef.innerHTML += renderDialog(index);
+    
+  } else{
   dialogRef.replaceChildren();
   dialogRef.showModal();
   dialogRef.innerHTML += renderDialog(index - 1);
-  console.log((myImages.length));
-  
-}
+}}
+

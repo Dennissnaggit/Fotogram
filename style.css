@@ -127,3 +127,6 @@ dialog[open] {
   cursor: pointer;
   background-color: rgb(14, 32, 41);
 }
+.value-image {
+    color: white;
+}
