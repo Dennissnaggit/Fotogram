@@ -30,7 +30,6 @@ function openDialog(index) {
 }
 
 function renderDialog(index) {
-  
   return ` 
           <header class="dialog-header">
             <h2>Image Name</h2>
@@ -46,6 +45,11 @@ function renderDialog(index) {
           <footer>
             <button><img src="/img/buttonleft.png" alt="" /></button>
             <p>1/12</p>
-            <button><img src="/img/buttonright.png" alt="" /></button>
+            <button onclick=(nextPicture(${index}))><img src="/img/buttonright.png" alt="" /></button>
           </footer>`;
+}
+function nextPicture(index) {
+  dialogRef.replaceChildren();
+  dialogRef.showModal();
+  dialogRef.innerHTML += renderDialog(index + 1);
 }
