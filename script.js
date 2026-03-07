@@ -9,15 +9,15 @@ let myImages = [
   "img/pictures/All_8.png",
 ];
 let myImagesNames = [
-    "Spaceshuttle",
-    "Raumstation",
-    "Bulli im All",
-    "Die Erde",
-    "2-D",
-    "Stern",
-    "Die Erde ein weiteres mal",
-    "Unsere Sonne"
-]
+  "Spaceshuttle",
+  "Raumstation",
+  "Bulli im All",
+  "Die Erde",
+  "2-D",
+  "Stern",
+  "Die Erde ein weiteres mal",
+  "Unsere Sonne",
+];
 const imagesRef = document.getElementById("main-images");
 const dialogRef = document.getElementById("imageDialog");
 const valueRef = document.getElementById("indexNumber");
@@ -44,18 +44,18 @@ function renderDialog(index) {
   return ` 
           <header class="dialog-header">
             <h2>${myImagesNames[index]}</h2>
-            <a onclick="dialogClose()" href="#close"><img src="/img/Close icon.svg" alt="${myImagesNames[index]}" /></a>
+            <a onclick="dialogClose()" href="#close"><img src="./img/Close icon.svg" alt="${myImagesNames[index]}" /></a>
           </header>
           <section class="dialog-image">
         <img class="dialog-main-image" src="${myImages[index]}" alt="Weltraum Bilder" />
           </section>
           <footer>
             <button onclick="previousPicture(${index})">
-            <img src="/img/buttonleft.png" alt="" />
+            <img src="./img/buttonleft.png" alt="Previous Button" />
             </button>
             <div class="value-image" id="indexNumber"><p>${index + 1} / ${myImages.length}</p></div>
             <button onclick="nextPicture(${index})"">
-            <img src="/img/buttonright.png" alt="" />
+            <img src="./img/buttonright.png" alt="Forward Button" />
             </button>
           </footer>`;
 }
@@ -75,15 +75,15 @@ function previousPicture(index) {
     dialogRef.replaceChildren();
     dialogRef.showModal();
     dialogRef.innerHTML += renderDialog(7);
-    
-  } else{
-  dialogRef.replaceChildren();
-  dialogRef.showModal();
-  dialogRef.innerHTML += renderDialog(index - 1);
-}}
+  } else {
+    dialogRef.replaceChildren();
+    dialogRef.showModal();
+    dialogRef.innerHTML += renderDialog(index - 1);
+  }
+}
 
 function dialogClose() {
-    dialogRef.close();
+  dialogRef.close();
 }
 
 function closeOnOutside(event) {
@@ -91,6 +91,3 @@ function closeOnOutside(event) {
     dialogRef.close();
   }
 }
-
-
-
