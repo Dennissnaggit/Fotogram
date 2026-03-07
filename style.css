@@ -60,11 +60,13 @@ h1 {
 
 .footer-class img {
   height: 36px;
+  object-fit: contain;
 }
 .footer-class p {
   padding-top: 20px;
   color: gray;
 }
+
 .main-images {
   width: 150px;
   height: 150px;
@@ -129,4 +131,8 @@ dialog[open] {
 }
 .value-image {
     color: white;
+}
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
 }

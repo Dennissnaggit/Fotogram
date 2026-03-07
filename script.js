@@ -8,6 +8,16 @@ let myImages = [
   "img/pictures/All_7.png",
   "img/pictures/All_8.png",
 ];
+let myImagesNames = [
+    "Spaceshuttle",
+    "Raumstation",
+    "Bulli im All",
+    "Die Erde",
+    "2-D",
+    "Stern",
+    "Die Erde ein weiteres mal",
+    "Unsere Sonne"
+]
 const imagesRef = document.getElementById("main-images");
 const dialogRef = document.getElementById("imageDialog");
 const valueRef = document.getElementById("indexNumber");
@@ -33,8 +43,8 @@ function openDialog(index) {
 function renderDialog(index) {
   return ` 
           <header class="dialog-header">
-            <h2>Image Name</h2>
-            <a href="#close"><img src="/img/Close icon.svg" alt="schliessen button" /></a>
+            <h2>${myImagesNames[index]}</h2>
+            <a onclick="dialogClose()" href="#close"><img src="/img/Close icon.svg" alt="${myImagesNames[index]}" /></a>
           </header>
           <section class="dialog-image">
         <img class="dialog-main-image" src="${myImages[index]}" alt="Weltraum Bilder" />
@@ -71,4 +81,10 @@ function previousPicture(index) {
   dialogRef.showModal();
   dialogRef.innerHTML += renderDialog(index - 1);
 }}
+
+function dialogClose() {
+    dialogRef.close();
+}
+console.log(myImages);
+
 
