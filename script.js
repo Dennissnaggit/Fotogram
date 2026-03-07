@@ -85,6 +85,12 @@ function previousPicture(index) {
 function dialogClose() {
     dialogRef.close();
 }
-console.log(myImages);
+
+function closeOnOutside(event) {
+  if (event.target === dialogRef) {
+    dialogRef.close();
+  }
+}
+
 
 

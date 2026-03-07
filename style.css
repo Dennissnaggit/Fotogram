@@ -47,7 +47,6 @@ h1 {
 }
 .footer-class {
   background-color: black;
-  background-image: url("img/Subtract.png");
   object-fit: contain;
   min-height: 128px;
   width: 100%;
@@ -57,12 +56,23 @@ h1 {
   align-items: center;
   flex-shrink: 0;
 }
+.footer-wrap {
+    width: 1440px;
+    min-height: 128px;
+    background-image: url("img/Subtract.png");
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    object-fit: cover;
+}
 
-.footer-class img {
+.footer-wrap img {
   height: 36px;
   object-fit: contain;
+  margin-top: 20px;
 }
-.footer-class p {
+.footer-wrap p {
   padding-top: 20px;
   color: gray;
 }
@@ -72,7 +82,7 @@ h1 {
   height: 150px;
   border: solid 1px grey;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: cover;;
 }
 .main-container-images {
   display: flex;
@@ -135,4 +145,33 @@ dialog[open] {
 dialog::backdrop {
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width:700px) {
+    .menu-class {
+        justify-content: center;
+        align-items: center;
+    }
+    .header-wrap {
+        justify-content: center;
+    }
+    .main-section h1 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 800;
+    }
+    .main-container-images {
+        justify-content: center;
+    }
+    .main-images {
+        width: 150px;
+        height: 150px;
+    }
+    .dialog-main-image {
+        width: 300px;
+        height: 375px;
+        object-fit:cover;
+    }
+    .dialog-header h2 {
+        font-size: 24px;
+    }
 }

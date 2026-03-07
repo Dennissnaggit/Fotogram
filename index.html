@@ -23,12 +23,18 @@
       <section class="main-section wrapper">
         <h1>My Personal photo album</h1>
         <div class="main-container-images" id="main-images"></div>
-        <dialog class="images-Dialog" id="imageDialog"></dialog>
+        <dialog
+          class="images-Dialog"
+          id="imageDialog"
+          onclick="closeOnOutside(event)"
+        ></dialog>
       </section>
     </div>
     <footer class="footer-class">
-      <img src="/img/DA-logo.png" alt="" />
-      <p>20226 Developer Akademie GmbH</p>
+      <div class="footer-wrap">
+        <img src="/img/DA-logo.png" alt="" />
+        <p>20226 Developer Akademie GmbH</p>
+      </div>
     </footer>
   </body>
   <script src="/script.js"></script>
