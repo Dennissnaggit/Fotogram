@@ -30,7 +30,7 @@ function render() {
 
 function getImages(index) {
   return `
-        <img onclick=(openDialog(${index})) class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder">
+        <button onclick=(openDialog(${index})) class="btn"><img  class="main-images" src= "${myImages[index]}" alt="Weltraum Bilder"></button>
         `;
 }
 

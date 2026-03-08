@@ -28,13 +28,12 @@ body {
 }
 .main-section {
   margin: 0 auto;
-  background-image: url("img/background.png");
   width: 1440px;
   align-items: center;
   flex-direction: column;
 }
 .main-section-big {
-  background-color: black;
+  background-image: url("img/background.png");
   flex: 1;
   display: flex;
 }
@@ -46,6 +45,7 @@ h1 {
   margin-bottom: 80px;
 }
 .footer-class {
+   background-image: url("img/Subtract.png");
   background-color: black;
   object-fit: contain;
   min-height: 128px;
@@ -59,7 +59,7 @@ h1 {
 .footer-wrap {
   width: 1440px;
   min-height: 128px;
-  background-image: url("img/Subtract.png");
+ 
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -83,6 +83,7 @@ h1 {
   border: solid 1px grey;
   border-radius: 20px;
   object-fit: cover;
+  cursor: pointer;
 }
 .main-container-images {
   display: flex;
@@ -119,6 +120,8 @@ dialog[open] {
 
 .dialog-main-image {
   width: 560px;
+  height: 372px;
+  object-fit: cover;
 }
 
 .images-Dialog header {
@@ -146,10 +149,20 @@ dialog::backdrop {
   backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.5);
 }
+.btn {
+  background: transparent;
+  border: none;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
 @media (max-width: 700px) {
   .menu-class {
     justify-content: center;
     align-items: center;
+  }
+  .main-section-big {
+    padding-bottom: 30px;
   }
   .header-wrap {
     justify-content: center;
@@ -178,7 +191,7 @@ dialog::backdrop {
     width: 100%;
   }
   .footer-wrap p {
-    padding-top: 20px;
+    margin-top: 20px;
   }
   .images-Dialog {
     justify-content: center;
