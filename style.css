@@ -29,7 +29,7 @@ body {
 }
 .main-section {
   margin: 0 auto;
-  width: 1440px;
+  max-width: 1440px;
   align-items: center;
   flex-direction: column;
 }
@@ -58,7 +58,7 @@ h1 {
   flex-shrink: 0;
 }
 .footer-wrap {
-  width: 1440px;
+  max-width: 1440px;
   min-height: 128px;
 
   display: flex;
@@ -161,6 +161,9 @@ dialog::backdrop {
   transform: scale(1.1);
 }
 @media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
   .menu-class {
     justify-content: center;
     align-items: center;

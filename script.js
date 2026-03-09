@@ -1,4 +1,4 @@
-let myImages = [
+const myImages = [
   "img/pictures/All_1.png",
   "img/pictures/All_2.png",
   "img/pictures/All_3.png",
@@ -8,7 +8,7 @@ let myImages = [
   "img/pictures/All_7.png",
   "img/pictures/All_8.png",
 ];
-let myImagesNames = [
+const myImagesNames = [
   "Spaceshuttle",
   "Raumstation",
   "Bulli im All",
@@ -40,25 +40,6 @@ function openDialog(index) {
   dialogRef.innerHTML += renderDialog(index);
 }
 
-function renderDialog(index) {
-  return ` 
-          <header class="dialog-header">
-            <h2>${myImagesNames[index]}</h2>
-            <a onclick="dialogClose()" href="#close"><img src="./img/Close icon.svg" alt="${myImagesNames[index]}" /></a>
-          </header>
-          <section class="dialog-image">
-        <img class="dialog-main-image" src="${myImages[index]}" alt="Weltraum Bilder" />
-          </section>
-          <footer>
-            <button onclick="previousPicture(${index})">
-            <img src="./img/buttonleft.png" alt="Previous Button" />
-            </button>
-            <div class="value-image" id="indexNumber"><p>${index + 1} / ${myImages.length}</p></div>
-            <button onclick="nextPicture(${index})"">
-            <img src="./img/buttonright.png" alt="Forward Button" />
-            </button>
-          </footer>`;
-}
 function nextPicture(index) {
   if (index >= myImages.length - 1) {
     dialogRef.replaceChildren();
@@ -70,6 +51,7 @@ function nextPicture(index) {
     dialogRef.innerHTML += renderDialog(index + 1);
   }
 }
+
 function previousPicture(index) {
   if (index <= 0) {
     dialogRef.replaceChildren();
@@ -90,4 +72,24 @@ function closeOnOutside(event) {
   if (event.target === dialogRef) {
     dialogRef.close();
   }
+}
+
+function renderDialog(index) {
+  return ` 
+          <header class="dialog-header">
+            <h2>${myImagesNames[index]}</h2>
+            <a onclick="dialogClose()" href="#close"><img src="./img/Close icon.svg" alt="${myImagesNames[index]}" /></a>
+          </header>
+          <section class="dialog-image">
+        <img class="dialog-main-image" src="${myImages[index]}" alt="Weltraum Bilder" />
+          </section>
+          <footer>
+            <button onclick="previousPicture(${index})">
+            <img src="./img/buttonleft.png" alt="Previous Button" />
+            </button>
+            <div class="value-image" id="indexNumber"><p>${index + 1} / ${myImages.length}</p></div>
+            <button onclick="nextPicture(${index})"">
+            <img src="./img/buttonright.png" alt="Forward Button" />
+            </button>
+          </footer>`;
 }
